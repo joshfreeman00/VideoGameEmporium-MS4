@@ -47,25 +47,20 @@
 </head>
 
 <body>
-  <header class="container-fluid fixed-top">
-    <div id="topnav" class="row nav-colour box-shadowing">
+  <header class="container-fluid">
+    <div id="topnav" class="row nav-colour box-shadowing align-middle">
       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
         <a href="{% url 'home' %}" class="nav-link main-logo-link">
           <h2 class="logo-font text-light my-0"><strong>Video Game</strong> <em class="silkscreen">Emporium</em></h2>
         </a>
       </div>
-      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+      <div class="col-12 col-lg-4 my-auto">
         <form method="GET" action="">
-          <div class="input-group w-100">
-            <input class="form-control border rounded-pill" type="text" name="q"
-              placeholder="Search our store">
-            <div class="input-group-append pl-2">
-              <button class="form-control btn btn-black border rounded-circle" type="submit">
-                <span class="icon">
-                  <i class="fas fa-search"></i>
-                </span>
-              </button>
-            </div>
+          <div class="input-group">
+            <input type="text" name="q" class="form-control border bg-light" placeholder="Search our store" aria-label="Search" aria-describedby="q">
+            <button class="input-group-text btn btn-light" id="q">
+              <i class="fas fa-search"></i>
+            </button>
           </div>
         </form>
       </div>
