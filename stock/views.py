@@ -21,7 +21,6 @@ def add_product(request):
     else:
         form = ProductForm()
 
-    form = ProductForm()
     template = 'stock/add_product.html'
     context = {
         'form': form,
@@ -33,6 +32,16 @@ def edit_product(request, product_id):
     ''' Edit a product '''
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Updated product successfully')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request, 'Failed to update product. Please try again.')
+    else:
+        form = ProductForm(instance=product)
+        messages.info(request, f'Editing {product.name}')
 
     template = 'stock/edit_product.html'
     context = {
