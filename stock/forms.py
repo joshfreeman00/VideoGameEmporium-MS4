@@ -1,7 +1,7 @@
 from django import forms
 from .models import Product, Category
 
-class PRoductForm(forms.ModelForm):
+class ProductForm(forms.ModelForm):
 
     class Meta:
         model = Product
@@ -14,4 +14,4 @@ class PRoductForm(forms.ModelForm):
 
         self.fields['category'].choices = display_names
         for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'border-black bg-white rounded-0'
+            field.widget.attrs['class'] = 'border-black rounded-0'
