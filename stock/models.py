@@ -18,7 +18,7 @@ class Category(models.Model):
         return self.display_name
 
 
-class Stock(models.Model):
+class Product(models.Model):
     category = models.ForeignKey("Category",
                                  null=True,
                                  blank=True,
