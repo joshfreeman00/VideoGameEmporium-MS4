@@ -28,3 +28,16 @@ def add_product(request):
     }
 
     return render(request, template, context)
+
+def edit_product(request, product_id):
+    ''' Edit a product '''
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+
+    template = 'stock/edit_product.html'
+    context = {
+        'form': form,
+        'product': product,
+    }
+
+    return render(request, template, context)
