@@ -13,7 +13,7 @@ def add_product(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
-            item = form.save()
+            product = form.save()
             messages.success(request, 'Stock has been successfully added.')
             return redirect(reverse('add_product'))
         else:
@@ -50,3 +50,11 @@ def edit_product(request, product_id):
     }
 
     return render(request, template, context)
+
+
+def delete_product(request, product_id):
+    ''' Deletes the selected stock item '''
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, 'Stock has been deleted.')
+    return redirect(reverse('products'))
