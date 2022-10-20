@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container bg-light mt-3 rounded">
+    <div class="row">
+        <div class="col-12">
+            <hr>
+            <h2 class="mb-2">Stock Management</h2>
+            <h5 class="text-muted">Current Stock</h5>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="left pb-2">
+            <a href="{% url 'add_product' %}" class="btn btn-success ">Add Stock <i
+                    class="fas fa-circle-plus right"></i></a>
+        </div>            
+    </div>
+    <div class="row">
+        <table class="table table-striped-columns">
+            <thead>
+              <tr>
+                <th scope="col">#id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Options</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for product in products %}
+              <tr>
+                <th scope="row">{{ product.id }}</th>
+                <td>{{ product.name }}</td>
+                <td>£{{ product.price }}</td>
+                <td>
+                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                </td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+    </div>
+</div>
+
+{% endblock %}
