@@ -59,7 +59,7 @@ def edit_product(request, product_id):
         if form.is_valid():
             form.save()
             messages.success(request, 'Updated product successfully')
-            return redirect(reverse('home'))
+            return redirect(reverse('stock_management'))
         else:
             messages.error(request, 'Failed to update product. Please try again.')
     else:
@@ -86,4 +86,4 @@ def delete_product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Stock has been deleted.')
-    return redirect(reverse('home'))
+    return redirect(reverse('stock_management'))
