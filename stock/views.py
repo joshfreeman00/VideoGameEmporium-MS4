@@ -9,6 +9,16 @@ from .forms import ProductForm
 
 
 @login_required
+def stock_management(request):
+    ''' A view to show all stock '''
+    products = Product.objects.all()
+
+    context = {
+        'products': products,
+    }
+    return render(request, 'stock/stock_management.html', context)
+
+@login_required
 def add_product(request):
     ''' Add a product to the store '''
 
