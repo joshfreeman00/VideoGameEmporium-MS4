@@ -8,6 +8,16 @@ from .models import Product, Category
 from .forms import ProductForm
 
 
+def all_products(request):
+    ''' A view to show all products, on the products page'''
+
+    products = Product.objects.all()
+
+    context = {
+        'products': products,
+    }
+
+    return render(request, 'stock/products.html', context)
 @login_required
 def stock_management(request):
     ''' A view to show all stock '''
