@@ -22,7 +22,7 @@
                 <div class="card-footer pt-0 border-0 text-left">
                     <div class="row">
                         <div class="col">
-                            <p class="lead mb-0 text-left font-weight-bold text-light">${{ product.price }}</p>
+                            <p class="lead mb-0 text-left font-weight-bold text-light">£{{ product.price }}</p>
                             {% if product.category %}
                             <p class="small mt-1 mb-0">
                                 <a class="text-light" href="{% url 'products' %}?category={{ product.category.name }}">
