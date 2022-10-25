@@ -18,6 +18,20 @@ def all_products(request):
     }
 
     return render(request, 'stock/products.html', context)
+
+
+def product_detail(request, product_id):
+    ''' A view to show individual products in detail'''
+
+    product = get_object_or_404(Product, pk=product_id)
+
+    context = {
+        'product': product,
+    }
+
+    return render(request, 'stock/product_detail.html', context)
+
+
 @login_required
 def stock_management(request):
     ''' A view to show all stock '''
@@ -27,6 +41,7 @@ def stock_management(request):
         'products': products,
     }
     return render(request, 'stock/stock_management.html', context)
+
 
 @login_required
 def add_product(request):
