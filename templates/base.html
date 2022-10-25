@@ -70,6 +70,18 @@
             <a class="text-light nav-link" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
               <div class="text-center">
+                <div><i class="fa-solid fa-bag-shopping"></i></div>
+                <p class="my-0">Products</p>
+              </div>
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+              <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+            </div>
+          </li>
+          <li class="list-inline-item dropdown">
+            <a class="text-light nav-link" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              <div class="text-center">
                 <div><i class="fas fa-user-astronaut fa-lg"></i></div>
                 <p class="my-0">My Account</p>
               </div>
