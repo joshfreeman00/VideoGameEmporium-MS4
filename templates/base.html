@@ -86,6 +86,11 @@
             </a>
             <div class="dropdown-menu border" aria-labelledby="user-options">
               <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+              <a href="{% url 'products' %}?category=video_games" class="dropdown-item">Video Games</a>
+              <a href="{% url 'products' %}?category=game_consoles" class="dropdown-item">Game Consoles</a>
+              <a href="{% url 'products' %}?category=trading_cards" class="dropdown-item">Trading Cards</a>
+              <a href="{% url 'products' %}?category=clothing" class="dropdown-item">Clothing</a>
+              <a href="{% url 'products' %}?category=accessories" class="dropdown-item">Accessories</a>
             </div>
           </li>
           <!-- account dropdown -->
@@ -130,7 +135,7 @@
     </div>
     <div id="delivery-banner" class="row">
       <div class="col px-0">
-        <h4 class="bg-light text-black text-center">This is a test for a
+        <h4 class="bg-light text-black text-center mb-0">This is a test for a
           delivery banner</h4>
       </div>
     </div>
