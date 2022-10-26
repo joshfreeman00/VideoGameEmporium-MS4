@@ -12,9 +12,21 @@ def all_products(request):
     ''' A view to show all products, on the products page'''
 
     products = Product.objects.all()
+    query = None
+
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, 'The search criteria is empty!')
+                return redirect(reverse('products'))
+
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            products = products.filter(queries)
 
     context = {
         'products': products,
+        'search_term': query,
     }
 
     return render(request, 'stock/products.html', context)
