@@ -34,7 +34,8 @@ body {
     width: fit-content;
 }
 
-.shop-now-button {
+.shop-now-button,
+.keep-shopping {
     background: #f8f9fa;
     color: #343a40;
 }
@@ -44,7 +45,10 @@ body {
 .shop-now-button:focus,
 #q:hover,
 #q:active,
-#q:focus {
+#q:focus,
+.keep-shopping:hover,
+.keep-shopping:active,
+.keep-shopping:focus {
     background: #95098e;
     color: #f8f9fa;
 }
