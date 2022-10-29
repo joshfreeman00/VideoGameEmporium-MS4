@@ -26,6 +26,12 @@ body {
     background: #2e0a36;
 }
 
+.nav-active-style:hover,
+.nav-active-style:active,
+.nav-active-style:focus {
+    background: #95098e;
+}
+
 .logo-font {
     color: #f8f9fa;
 }

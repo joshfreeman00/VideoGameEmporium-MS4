@@ -67,7 +67,7 @@
       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
         <ul class="list-inline list-unstyled text-center text-lg-right my-0">
           <!-- home page link -->
-          <li class="list-inline-item">
+          <li class="list-inline-item nav-active-style">
             <a class="text-light nav-link" href="{% url 'home' %}">
               <div class="text-center">
                 <div><i class="fa-solid fa-house"></i></div>
@@ -76,7 +76,7 @@
             </a>
           </li>
           <!-- products -->
-          <li class="list-inline-item dropdown">
+          <li class="list-inline-item dropdown nav-active-style">
             <a class="text-light nav-link" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
               <div class="text-center">
@@ -94,7 +94,7 @@
             </div>
           </li>
           <!-- account dropdown -->
-          <li class="list-inline-item dropdown">
+          <li class="list-inline-item dropdown nav-active-style">
             <a class="text-light nav-link" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
               <div class="text-center">
@@ -116,7 +116,7 @@
             </div>
           </li>
           <!-- shopping cart -->
-          <li class="list-inline-item">
+          <li class="list-inline-item nav-active-style">
             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-light{% endif %} nav-link" href="{% url 'display_cart' %}">
               <div class="text-center">
                 <div><i class="fas fa-cart-shopping fa-lg"></i></div>
