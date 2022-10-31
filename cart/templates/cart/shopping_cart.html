@@ -38,7 +38,7 @@
                         </td>
                         <td><strong>£{{ item.product.price }}</strong></td>
                         <td>
-                            <form method="POST" action="" class="form update-form">
+                            <form method="POST" action="{% url 'adjust_cart' item.item_id %}" class="form update-form">
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <div class="input-group input-group-{{ item.item_id }}">
