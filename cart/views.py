@@ -33,3 +33,31 @@ def add_to_cart(request, item_id):
 
     request.session['cart'] = cart
     return redirect(redirect_url)
+
+
+def adjust_cart(request, item_id):
+    ''' Adjust the quantity of a product in the cart '''
+
+    quantity = int(request.POST.get('quantity'))
+    size = None
+    if 'product_size' in request.POST:
+        size = request.POST['product_size']
+    cart = request.session.get('cart', {})
+
+    if size:
+        if quantity > 0:
+            cart[item_id]['item_by_size'][size] = quantity
+        else:
+            del cart[item_id]['item_by_size'][size]
+            if not cart[item_id]['item_by_size']:
+                cart.pop(item_id)
+    else:
+        if quantity > 0:
+            cart[item_id] = quantity
+        else:
+            cart.pop(item_id)
+
+    request.session['cart'] = cart
+    return redirect(reverse('display_cart'))
+
+
