@@ -31,7 +31,9 @@
                             <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}"
                                 class="rounded cart-image">
                         </td>
-                        <td><strong>{{ item.product.name }}</strong>
+                        <td>
+                            <strong>{{ item.product.name }}</strong>
+                            <p class="my-0"><strong>Size: </strong>{% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
                             <!-- <p class="my-0 small text-muted"> SKU </p> -->
                         </td>
                         <td><strong>£{{ item.product.price }}</strong></td>
