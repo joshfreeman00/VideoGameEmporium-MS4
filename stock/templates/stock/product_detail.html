@@ -64,3 +64,8 @@
         </div>
     </div>
 {% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'stock/includes/quantity_script.html' %}
+{% endblock %}

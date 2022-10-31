@@ -82,3 +82,9 @@
     </div>
 </div>
 {% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'stock/includes/quantity_script.html' %}
+{% include 'cart/includes/manage_cart.html' %}
+{% endblock %}
