@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load cart_tools %}
 
 {% block content %}
 <div class="overlay"></div>
@@ -65,9 +66,9 @@
                                 </div>
                             </form>
                             <a class="update-link text-info"><small>Update</small></a>
-                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-size="{{ item.size }}"><small>Remove</small></a>
+                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
                         </td>
-                        <td><strong>£{{ item.product.price }}</strong></td>
+                        <td><strong>£{{ item.product.price | calc_subtotal:item.quantity }}</strong></td>
                     </tr>
                     {% endfor %}
                 </tbody> 
@@ -76,10 +77,10 @@
                 <div colspan="5" class="pt-5 text-right">
                     <h6><strong>Cart Total: £{{ total|floatformat:2 }}</strong></h6>
                     <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
-                    <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                    <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
                     {% if free_delivery_delta > 0 %}
                         <p class="mb-1 text-danger">
-                            You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
+                            You could get free delivery by spending just <strong>£{{ free_delivery_delta }}</strong> more!
                         </p>
                     {% endif %}
                 </div>
