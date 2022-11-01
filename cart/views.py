@@ -75,6 +75,7 @@ def adjust_cart(request, item_id):
 def remove_from_cart(request, item_id):
     ''' Remove a product from the cart '''
     try:
+        product = get_object_or_404(Product, pk=item_id)
         size = None
         if 'product_size' in request.POST:
             size = request.POST['product_size']
@@ -84,11 +85,14 @@ def remove_from_cart(request, item_id):
             del cart[item_id]['item_by_size'][size]
             if not cart[item_id]['item_by_size']:
                 cart.pop(item_id)
+                messages.info(request, f'Removed {product.name}, size {size.upper()}, from the cart.')
         else:
             cart.pop(item_id)
+            messages.info(request, f'Removed {product.name} from the cart')
 
         request.session['cart'] = cart
         return HttpResponse(status=200)
 
     except Exception as e:
+        messages.error(request, f'Error removing item {e}')
         return HttpResponse(status=500)
