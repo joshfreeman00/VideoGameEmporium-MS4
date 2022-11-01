@@ -44,6 +44,7 @@ def add_to_cart(request, item_id):
 def adjust_cart(request, item_id):
     ''' Adjust the quantity of a product in the cart '''
 
+    product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     size = None
     if 'product_size' in request.POST:
@@ -53,15 +54,19 @@ def adjust_cart(request, item_id):
     if size:
         if quantity > 0:
             cart[item_id]['item_by_size'][size] = quantity
+            messages.info(request, f'Updated {product.name}, size {size.upper()}, to {cart[item_id]["items_by_size"][size]}')
         else:
             del cart[item_id]['item_by_size'][size]
             if not cart[item_id]['item_by_size']:
                 cart.pop(item_id)
+            messages.info(request, f'Removed {product.name}, size {size.upper()}, from the cart.')
     else:
         if quantity > 0:
             cart[item_id] = quantity
+            messages.info(request, f'Updated {product.name} quantity to {cart[item_id]}')
         else:
             cart.pop(item_id)
+            messages.info(request, f'Removed {product.name} from the cart')
 
     request.session['cart'] = cart
     return redirect(reverse('display_cart'))
