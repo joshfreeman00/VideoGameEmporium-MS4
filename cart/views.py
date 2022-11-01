@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
 
 from stock.models import Product
@@ -13,7 +13,7 @@ def display_cart(request):
 def add_to_cart(request, item_id):
     ''' Add a quantity of a product to the cart '''
 
-    product = Product.objects.get(pk=item_id)
+    product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     size = None
@@ -25,17 +25,20 @@ def add_to_cart(request, item_id):
         if item_id in list(cart.keys()):
             if size in cart[item_id]['items_by_size'].keys():
                 cart[item_id]['items_by_size'][size] += quantity
+                messages.info(request, f'Updated {product.name}, size {size.upper()}, to {cart[item_id]["items_by_size"][size]}')
             else:
                 cart[item_id]['items_by_size'][size] = quantity
+                messages.success(request, f'Added {product.name}, size {size.upper()}, to the cart.')
         else:
             cart[item_id] = {'items_by_size': {size: quantity}}
+            messages.success(request, f'Added {product.name}, size {size.upper()}, to the cart.')
     else:
         if item_id in list(cart.keys()):
             cart[item_id] += quantity
+            messages.info(request, f'Updated {product.name} quantity to {cart[item_id]}')
         else:
             cart[item_id] = quantity
             messages.success(request, f'Added {product.name} to the cart.')
-            print(messages)
 
     request.session['cart'] = cart
     return redirect(redirect_url)
