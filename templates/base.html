@@ -57,7 +57,8 @@
       <div class="col-12 col-lg-4 my-auto">
         <form method="GET" action="{% url 'products' %}">
           <div class="input-group">
-            <input type="text" name="q" class="form-control border bg-light" placeholder="Search our store" aria-label="Search" aria-describedby="q">
+            <input type="text" name="q" class="form-control border bg-light" placeholder="Search our store"
+              aria-label="Search" aria-describedby="q">
             <button class="input-group-text btn btn-light" id="q">
               <i class="fas fa-search"></i>
             </button>
@@ -117,7 +118,8 @@
           </li>
           <!-- shopping cart -->
           <li class="list-inline-item nav-active-style">
-            <a class="{% if grand_total %}text-warning font-weight-bold{% else %}text-light{% endif %} nav-link" href="{% url 'display_cart' %}">
+            <a class="{% if grand_total %}text-warning font-weight-bold{% else %}text-light{% endif %} nav-link"
+              href="{% url 'display_cart' %}">
               <div class="text-center">
                 <div><i class="fas fa-cart-shopping fa-lg"></i></div>
                 <p class="my-0">
@@ -135,14 +137,27 @@
     </div>
     <div id="delivery-banner" class="row">
       <div class="col px-0">
-        <h4 class="bg-light text-black text-center mb-0">FREE DELIVERY FOR ORDERS OVER £{{ free_delivery_threshold }}</h4>
+        <h4 class="bg-light text-black text-center mb-0">FREE DELIVERY FOR ORDERS OVER £{{ free_delivery_threshold }}
+        </h4>
       </div>
     </div>
   </header>
 
 
   {% if messages %}
-  <div class="message-container"></div>
+  {% for message in messages %}
+  {% with message.level as level %}
+  {% if level == 40 %}
+  {% include 'includes/toasts/toast_error.html' %}
+  {% elif level == 30 %}
+  {% include 'includes/toasts/toast_warning.html' %}
+  {% elif level == 25 %}
+  {% include 'includes/toasts/toast_success.html' %}
+  {% else %}
+  {% include 'includes/toasts/toast_info.html' %}
+  {% endif %}
+  {% endwith %}
+  {% endfor %}
   {% endif %}
 
   {% block page_header %}
@@ -152,6 +167,18 @@
   {% endblock %}
 
   {% block postloadjs %}
+  <script type="text/javascript">
+
+    let toastElList = [].slice.call(document.querySelectorAll('.toast'))
+    let toastList = toastElList.map(function (toastEl) {
+      let option = {
+        animation: true,
+        delay: 5000,
+      }
+      let bsToast = new bootstrap.Toast(toastEl, option)
+      bsToast.show();
+    })
+  </script>
   {% endblock %}
 
 
