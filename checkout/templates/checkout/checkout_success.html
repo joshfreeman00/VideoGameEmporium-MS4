@@ -2,40 +2,89 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="container bg-dark rounded">
+<div class="container bg-dark rounded text-light">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4">Thank You!</h2>
+            <hr>
+            <p class="text-light">Your order information is below. A confirmation email will be sent to
+                <strong>{{ order.email }}</strong>.</p>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <h3>Order Info:</h3>
+        </div>
+        <hr>
+        <div class="col-12">
+            <p>Order Number: {{ order.order_number }}</p>
+        </div>
+        <div class="col-12">
+            <p>Date: {{ order.date }}</p>
+        </div>
+        {% for item in order.lineitems.all %}
         <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">Thank You!</h2>
-                <hr>
-                <p class="text-light">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+            <div class="col-12 col-md-4">
+                <p class="small mb-0">
+                    {{ item.product.name }}{% if item.product_size %} - Size {{ item.product_size|upper }}{% endif %}
+                </p>
+            </div>
+            <div class="col-12 col-md-8 text-md-right">
+                <p class="small mb-0">{{ item.quantity }} @ £{{ item.product.price }} each</p>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-12 col-lg-7"></div>
-        </div>
-        <div class="row">
-			<div class="col-12 col-lg-7">
-				<a href="{% url 'home' %}?" class="btn shop-now-button rounded my-2">
-					<span class="icon mr-2">
-						<i class="fa-solid fa-house"></i>
-					</span>
-					<span>Return to homepage.</span>
-				</a>
-			</div>
-		</div>
+        {% endfor %}
     </div>
+    <hr>
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <h3><strong>Delivering to:</strong></h3>
+            <p>{{ order.full_name }}</p>
+            <p>{{ order.street_address1 }}</p>
+            {% if order.street_address2 %}
+            <p>{{ order.street_address2 }}</p>
+            {% endif %}
+            <p>{{ order.town_or_city }}</p>
+            {% if order.county %}
+            <p>{{ order.county }}</p>
+            {% endif %}
+            {% if order.postcode %}
+            <p>{{ order.postcode }}</p>
+            {% endif %}
+            <p>{{ order.country }}</p>
+            <p>{{ order.phone_number }}</p>
+        </div>
+        <div class="col-12 col-md-6">
+            <h3><strong>Billing information:</strong></h3>
+            <p>Order Total: £{{ order.order_total }}</p>
+            <p>Delivery Charge: £{{ order.delivery_cost }}</p>
+            <p>Grand Total: £{{ order.grand_total }}</p>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12 col-lg-7">
+            <a href="{% url 'home' %}?" class="btn shop-now-button rounded my-2">
+                <span class="icon mr-2">
+                    <i class="fa-solid fa-house"></i>
+                </span>
+                <span>Return to homepage.</span>
+            </a>
+        </div>
+    </div>
+</div>
 {% endblock %}
