@@ -10,9 +10,28 @@
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4">{{ profile }}'s profile</h2>
+                <h2 class="logo-font mb-4">{{ profile.user }}'s profile</h2>
                 <hr>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <p>Your delivery information:</p>
+                <form action="{% url 'profile' %}" method="POST" id="profile-update-form" class="m-3">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="btn shop-now-button rounded">Update info</button>
+                </form>
+            </div>
+            <div class="col-12 col-lg-6">
+                <p>Order history:</p>
+                {{ orders }}
+            </div>
+        </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript" src="{% static 'profiles/js/profile.js' %}"></script>
 {% endblock %}
