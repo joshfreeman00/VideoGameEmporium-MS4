@@ -4,9 +4,10 @@
 
 {% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
 
-{% block content %}
+{% block inner_content %}
+<hr>
 <h1>{% trans "Verify Your E-mail Address" %}</h1>
-
+<hr>
 {% url 'account_email' as email_url %}
 
 <p>{% blocktrans %}This part of the site requires us to verify that
