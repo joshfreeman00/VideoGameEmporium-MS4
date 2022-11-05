@@ -26,7 +26,7 @@
         <div class="col-12 col-lg-6">
             <p>Order history:</p>
             <div class="order-history table-responsive">
-                <table class="table">
+                <table class="table table-sm text-light">
                     <thead>
                         <tr>
                             <th>Order number</th>
@@ -40,7 +40,7 @@
                         <tr>
                             <td>
                                 <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">
-                                    {{ order.order_number|truncatechars:6 }}
+                                    {{ order.order_number|truncatechars:12 }}
                                 </a>
                             </td>
                             <td>{{ order.date }}</td>
@@ -48,14 +48,16 @@
                                 <ul class="list-unstyled">
                                     {% for item in order.lineitems.all %}
                                     <li class="small">
+                                        {{ item.product.name }} 
                                         {% if item.product.has_sizes %}
-                                        Size {{ item.product.size|upper }}
-                                        {% endif %}{{ item.product.name }} x{{ item.quantity }}
+                                        Size {{ item.product_size|upper }}
+                                        {% endif %}
+                                        x{{ item.quantity }}
                                     </li>
                                     {% endfor %}
                                 </ul>
                             </td>
-                            <td>${{ order.grand_total }}</td>
+                            <td>£{{ order.grand_total }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
