@@ -78,12 +78,21 @@
     <hr>
     <div class="row">
         <div class="col-12 col-lg-7">
+            {% if from_profile %}
+            <a href="{% url 'profile' %}?" class="btn shop-now-button rounded my-2">
+                <span class="icon mr-2">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </span>
+                <span>Return to profile.</span>
+            </a>
+            {% else %}
             <a href="{% url 'home' %}?" class="btn shop-now-button rounded my-2">
                 <span class="icon mr-2">
                     <i class="fa-solid fa-house"></i>
                 </span>
                 <span>Return to homepage.</span>
             </a>
+            {% endif %}
         </div>
     </div>
 </div>
