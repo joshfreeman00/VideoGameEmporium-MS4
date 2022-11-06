@@ -1,0 +1,1 @@
+web: gunicorn vg_emporium.wsgi:application
