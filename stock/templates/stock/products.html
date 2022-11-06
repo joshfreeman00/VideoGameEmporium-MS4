@@ -6,7 +6,10 @@
     <div class="row nav-colour box-shadowing mx-0">
         <div class="col text-center mt-3">
             <h2 class="text-light">Products</h2>
-            <hr class="w-50 mb-1">
+            {% for c in categories %}
+            <hr>
+            <h4>{{ c.display_name }}</h4>
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -23,6 +26,15 @@
                 </select>
             </div>
         </div>
+        <div class="col-12 col-md-6 order-md-first">
+            <p class=" mt-3 text-start text-light">
+                {% if search_term or selected_categories or current_sorting != 'None_None' %}
+                    <span class="small"><a href="{% url 'products' %}">All Products</a> | </span>
+                {% endif %}
+                {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+            </p>
+        </div>
+    </div>
     <div class="row">
         {% for product in products %}
         <div class="col-sm-6 col-md-6 col-lg-4">
