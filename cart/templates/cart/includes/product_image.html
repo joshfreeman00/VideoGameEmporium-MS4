@@ -1,0 +1,7 @@
+{% if item.product.image %}
+<img src="{{ item.product.image.url }}" alt="{{ item.product.name }}"
+    class="rounded cart-image">
+{% else %}
+<img src="{{ MEDIA_URL }}no_image.jpeg" alt="{{ item.product.name }}"
+    class="rounded cart-image">
+{% endif %}
