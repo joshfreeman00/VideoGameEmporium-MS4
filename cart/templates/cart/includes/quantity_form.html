@@ -25,14 +25,23 @@
     </div>
 </form>
 <a class="update-link text-info"><small>Update</small></a>
-<a class="modal-trigger remove-item text-danger float-right" id="#modal-{{ item.item.id }}"><small>Remove</small></a>
+<a class="remove-item text-danger float-right" data-bs-toggle="modal" data-bs-target="#removeModal"><small>Remove</small></a>
 <!-- modal structure -->
-<div id="modal-{{ item.item.id }}" class="modal">
-    <div class="modal-content black-text center-align">
-        <h4>Are you sure you want to remove this from your cart?</h4>
-    </div>
-    <div class="modal-footer">
-        <a class="btn btn-danger text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
-        <a class="btn btn-info modal-close text-end">Cancel</a>
+<div class="modal fade" id="removeModal" tabindex="-1" aria-labelledby="removeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="removeModalLabel"><i class="fa-solid fa-circle-info"></i></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p>Are you sure you want to remove this from your cart?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a class="btn btn-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
+        </div>
+      </div>
     </div>
 </div>
+

@@ -36,7 +36,7 @@
                 <td>£{{ product.price }}</td>
                 <td>
                     <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                    <a class="text-danger modal-trigger" href="#modal-{{ product.id }}">Delete</a>
+                    <a class="text-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a>
                 </td>
               </tr>
             {% endfor %}
