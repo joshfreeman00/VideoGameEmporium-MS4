@@ -1,108 +1,176 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Video Game Emporium
 
-Welcome joshfreeman00,
+* Video Game Emporium is a website designed to allow users browse and purchase video game related products.
+A deployed link is available [here.](https://video-game-emporium-ms4.herokuapp.com/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+* This website is a full-stack web application using Django framework, HTML, CSS and JS.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+* IMPORTANT NOTICE!!
+    - This website is for educational purposes and the stripe functionality is set up only to accept the test card details below. 
+  
+     - To use the stripe function use the following details.
 
-## Gitpod Reminders
+        - Card Number : 4242 4242 4242 4242
+        - Expiry Date : Any date thats into the future.
+        - Any CVC number.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+    - DO NOT USE YOUR PERSONAL CARD DETAILS.
 
-`python3 -m http.server`
+## Showcase of the site
 
-A blue button should appear to click: _Make Public_,
+![showcase]()
 
-Another blue button should appear to click: _Open Browser_.
+## UX
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## Goals
 
-A blue button should appear to click: _Make Public_,
+* The aim of the website is to allow users to browse the range of products the website has to offer, add products to a shopping cart and purchase them. the sttock is managed by superusers.
 
-Another blue button should appear to click: _Open Browser_.
+### User:
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+As a user;
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### Admin:
 
-------
+As a admin;
 
-## Release History
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Structure/Features
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### Logo and Navigation bar
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+* 
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![nav_bar]()
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### Header
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+* 
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+![header]()
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Footer
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+* The footer contains external links to both Github and The Code Institute.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+![footer]()
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Profile page
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+* 
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+![profile_page]()
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Log in page
 
-------
+* 
 
-## FAQ about the uptime script
+![login_page]()
 
-**Why have you added this script?**
+### Register page
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+* 
 
-**How will this affect me?**
+![register_page]()
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### Deletion modals
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+* The deletion/removal modals are used as a form of defensive programming, clicking any delete/remove button will cause the modal to appear, asking if the user would like to continue.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+![remove_modal]()
 
-**So….?**
+![delete_modal]()
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+### Admin only features
 
-**Can I opt out?**
+* Managing stock:
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+  - 
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+  ![]()
 
-**Anything more?**
+## Design
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+### Images
 
----
+### Colour scheme
 
-Happy coding!
+* The colors of purple and black used throughout help contrast the white text.
+ - The two colors also help ease the users eyes. It reduces the light emitted by device screens while maintaining the minimum colour contrast ratios required for accessability.
+* The white colours of the delivery banner and checkout along with the black text allows the users to see what they are purchasing as both colours have the greatest contrast.
+
+### Fonts 
+
+* The main font used throughout the website is Open Sans. A fullback font of Sans-Serif is used just in case for whatever reason is that the font isn't loaded correctly.
+  - The link to link to the font Open Sans can be found [here.](https://fonts.google.com/specimen/Open+Sans?query=open+sans)
+* The font used for the logo is Silkscreen and can be found [here.](https://fonts.google.com/specimen/Silkscreen?query=silk)
+
+## Wireframes
+
+The wireframes for the webpage can be viewed here.
+
+* ![]()
+
+## ERD diagram
+
+The ERD diagram for the project can be viewed here.
+
+* ![ERD]()
+
+## Languages
+
+* [HTML5](https://en.wikipedia.org/wiki/HTML5)
+* [CSS](https://en.wikipedia.org/wiki/CSS)
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+## Tools
+
+* [Gitpod](https://www.gitpod.io/) - Used as a cloud-based IDE.
+* [Github](https://github.com/) - Used to secure code online.
+* [Git](https://git-scm.com/) - Version control.
+* [Bootstrap](https://getbootstrap.com/) - Used for responsive front-end CSS framework.
+* [Balsamiq](https://balsamiq.com/) - Used to create wireframes.
+* [Font Awesome](https://fontawesome.com/icons) - For the various icons used.
+* Google Chrome Dev tools - for proofreading code.
+* [Am I Responsive?](http://ami.responsivedesign.is/) - To see the responsiveness of the website on multiple devices.
+* [WebAIM](https://webaim.org/resources/contrastchecker/#:~:text=WCAG%202.0%20level%20AA%20requires,such%20as%20form%20input%20borders) - Used to check the contrast between foreground and background colours.
+* [Stripe](https://stripe.com/ie) - Stripe has been used for the payment section of the site.
+
+* [Heroku](https://signup.heroku.com/) - Used to deploy the website.
+
+* [Amazon AWS](https://aws.amazon.com/) - Used to store the static files and the images for the site.
+* [Gunicorn](https://gunicorn.org/) - Used for deploying the project to Heroku.
+
+## Testing
+
+To view all testing documentation click [here](TESTING.md)
+
+## Deployment
+
+The live deployed application can be found at [video-game-emporium-ms4](https://video-game-emporium-ms4.herokuapp.com/).
+
+### Local Deployment
+
+
+
+## Credits
+
+* [Font Awesome](https://fontawesome.com/icons) - The icons used.
+* [Bootstrap](https://getbootstrap.com/) - For CSS formatting and styling.
+* [Stack Overflow](https://stackoverflow.com/) - For help debugging and fixes throughout.
+* My mentor - For helpful tips and debugging.
+* Boutique Ado Walkthrough project - For guidance on code that was used from Code Institute.
+* [Wikipedia](*) - For the images used for the games.
+* [Scott Kipp](https://github.com/Code-Institute-Solutions/boutique_ado_v1/commit/de7ad2067ac1b5de37a4cd8b9f4ddf572a4bf6c7#diff-7653e5eaf8a2f40ba60d0de39ab6c27cfb9c64c80807631498ebb9295c51744a
+) - For the minus quantity bug within the cart.
+
+
+## Acknowledgements
+
+* To create this website, I used material and information covered in the Full Stack Development course by Code Institute. As well as information from the gitSlack Community Channels, Stack Overflow and W3Schools.
+
+* Tim Nelson, my mentor, for reviewing my work and providing useful, help, feedback and advice throughout.
