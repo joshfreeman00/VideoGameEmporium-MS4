@@ -1,0 +1,10 @@
+<div id="modal-{{ product.id }}" class="modal">
+    <div class="modal-content black-text center-align">
+        <h4>Are you sure you want to delete this product?</h4>
+        <p>This cannot be undone</p>
+    </div>
+    <div class="modal-footer">
+        <a href="{% url 'delete_product' product.id %}" class="btn btn-danger text-start">Delete</a>
+        <a class="btn btn-info modal-close text-end">Cancel</a>
+    </div>
+</div>
