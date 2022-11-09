@@ -132,7 +132,7 @@ The wireframes for the webpage can be viewed here.
 
 The ERD diagram for the project can be viewed here.
 
-* ![ERD]()
+* ![ERD](docs/testing/erd-diagram.png)
 
 ## Languages
 
