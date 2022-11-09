@@ -41,7 +41,9 @@
                             <p><strong>Subtotal: </strong>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </div>
                         <div class="col-12 col-sm-6">
-                            {% include "cart/includes/quantity_form.html" %}
+                            {% with modalID="removeModalMobile" %}
+                                {% include "cart/includes/quantity_form.html" %}
+                            {% endwith %}
                         </div>
                     </div>
                     <div class="row"><div class="col"><hr></div></div>
@@ -75,7 +77,9 @@
                         </td>
                         <td><strong>£{{ item.product.price }}</strong></td>
                         <td>
-                            {% include "cart/includes/quantity_form.html" %}
+                            {% with modalID="removeModal" %}
+                                {% include "cart/includes/quantity_form.html" %}
+                            {% endwith %}
                         </td>
                         <td><strong>£{{ item.product.price | calc_subtotal:item.quantity }}</strong></td>
                     </tr>

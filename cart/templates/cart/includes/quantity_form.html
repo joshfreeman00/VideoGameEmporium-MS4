@@ -3,19 +3,15 @@
     <div class="form-group">
         <div class="input-group input-group-{{ item.item_id }}">
             <div class="input-group-prepend">
-                <button class="decrement-qty btn btn-sm decrement-btn rounded decrement-qty_{{ item.item_id }} mx-1" 
-                    data-item_id="{{ item.item_id }}">
+                <button class="decrement-qty btn btn-sm decrement-btn rounded decrement-qty_{{ item.item_id }} mx-1" data-item_id="{{ item.item_id }}">
                     <span>
                         <i class="fas fa-minus fa-sm"></i>
                     </span>
                 </button>
             </div>
-            <input class="form-control qty_input id_qty_{{ item.item_id }}" type="number"
-                name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                data-item_id="{{ item.item_id }}">
+            <input class="form-control qty_input id_qty_{{ item.item_id }}" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}">
             <div class="input-group-append">
-                <button class="increment-qty btn btn-sm increment-btn rounded increment-qty_{{ item.item_id }} mx-1"
-                    data-item_id="{{ item.item_id }}">
+                <button class="increment-qty btn btn-sm increment-btn rounded increment-qty_{{ item.item_id }} mx-1" data-item_id="{{ item.item_id }}">
                     <span>
                         <i class="fas fa-plus fa-sm"></i>
                     </span>
@@ -24,24 +20,25 @@
         </div>
     </div>
 </form>
+
 <a class="update-link text-info"><small>Update</small></a>
-<a class="remove-item text-danger float-right" data-bs-toggle="modal" data-bs-target="#removeModal"><small>Remove</small></a>
+<a class="remove-item text-danger" data-bs-toggle="modal" data-bs-target="#{{ modalID }}-{{ item.item_id }}"><small>Remove</small></a>
+
 <!-- modal structure -->
-<div class="modal fade" id="removeModal" tabindex="-1" aria-labelledby="removeModalLabel" aria-hidden="true">
+<div class="modal fade" id="{{ modalID }}-{{ item.item_id }}" tabindex="-1" aria-labelledby="{{ modalID }}Label-{{ item.item_id }}" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="removeModalLabel"><i class="fa-solid fa-circle-info"></i></h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="{{ modalID }}Label-{{ item.item_id }}"><i class="fa-solid fa-circle-info"></i></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to remove this from your cart?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a class="btn btn-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
+            </div>
         </div>
-        <div class="modal-body">
-            <p>Are you sure you want to remove this from your cart?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a class="btn btn-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
-        </div>
-      </div>
     </div>
 </div>
-
