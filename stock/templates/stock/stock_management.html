@@ -40,7 +40,7 @@
                 <td>£{{ product.price }}</td>
                 <td>
                     <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                    <a class="text-danger delete-btn" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a>
+                    <a class="text-danger delete-btn" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ product.id }}">Delete</a>
                 </td>
               </tr>
               {% if request.user.is_superuser %}
