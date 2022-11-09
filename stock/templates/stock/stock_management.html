@@ -26,6 +26,7 @@
               <tr>
                 <th scope="col">#id</th>
                 <th scope="col">Name</th>
+                <th scope="col">Category</th>
                 <th scope="col">Price</th>
                 <th scope="col">Options</th>
               </tr>
@@ -35,6 +36,7 @@
               <tr>
                 <th scope="row">{{ product.id }}</th>
                 <td>{{ product.name }}</td>
+                <td>{{ product.category.display_name }}</td>
                 <td>£{{ product.price }}</td>
                 <td>
                     <a href="{% url 'edit_product' product.id %}">Edit</a> | 
