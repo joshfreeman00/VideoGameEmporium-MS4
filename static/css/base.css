@@ -22,8 +22,45 @@ body {
     font-family: 'Silkscreen', cursive;
 }
 
-.nav-colour {
+.nav-colour,
+.footer-colour {
     background: #2e0a36;
+}
+
+footer {
+    height: 6rem;
+    font-size: 80%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-links,
+.socials i {
+    text-decoration: none;
+    color: #f8f9fa;
+}
+
+.footer-links:hover,
+.socials i:hover {
+    color: #6c757d;
+}
+
+.follow-col {
+    color: #f8f9fa;
+}
+
+.socials {
+    text-align: center;
+    padding: 0;
+}
+
+.socials li {
+    display: inline;
+}
+
+.socials i {
+    margin: 0 10px;
 }
 
 .nav-active-style:hover,
@@ -176,5 +213,16 @@ body {
 
     .header-container {
         padding-top: 164px;
+    }
+}
+
+@media (max-width: 531px) {
+    footer {
+        font-size: 60%;
+        height: 5.5rem;
+    }
+
+    .socials i {
+        margin: 0 5px;
     }
 }
