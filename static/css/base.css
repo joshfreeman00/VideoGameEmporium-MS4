@@ -130,7 +130,8 @@ footer {
 }
 
 .update-link,
-.remove-item {
+.remove-item,
+.delete-btn {
     cursor: pointer;
 }
 
