@@ -30,8 +30,6 @@ body {
 footer {
     height: 6rem;
     font-size: 80%;
-    position: fixed;
-    bottom: 0;
     width: 100%;
 }
 
