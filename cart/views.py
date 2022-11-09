@@ -106,7 +106,7 @@ def remove_from_cart(request, item_id):
             messages.info(request, f'Removed {product.name} from the cart')
 
         request.session['cart'] = cart
-        return HttpResponse(status=200)
+        return redirect(reverse('display_cart'))
 
     except Exception as e:
         messages.error(request, f'Error removing item {e}')
