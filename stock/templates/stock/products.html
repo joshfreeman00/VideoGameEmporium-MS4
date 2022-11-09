@@ -33,45 +33,45 @@
     </div>
     <div class="row">
         {% for product in products %}
-        <div class="col-sm-6 col-md-4 col-lg-2">
-            <div class="card product-card rounded bg-dark">
-                {% if product.image %}
-                <a href="{% url 'product_detail' product.id %}">
-                    <img class="card-img-top img-fluid bg-dark" src="{{ product.image.url }}" alt="image for {{ product.name }}">
-                </a>
-                {% else %}
-                <a href="{% url 'product_detail' product.id %}">
-                    <img class="card-img-top img-fluid bg-dark" src="{{ MEDIA_URL }}no_image.jpeg" alt="no image found for {{ product.name }}">
-                </a>
-                {% endif %}
-                <div class="card-body pb-0 text-light bg-dark">
-                    <p class="mb-0">{{ product.name }}</p>
-                </div>
-                <div class="card-footer pt-0 border-0 text-start bg-dark">
-                    <div class="row">
-                        <div class="col">
-                            <p class="lead mb-0 text-left font-weight-bold text-light">£{{ product.price }}</p>
-                            {% if product.category %}
-                            <p class="small mt-1 mb-0">
-                                <a class="text-light" href="{% url 'products' %}?category={{ product.category.name }}">
-                                    {{ product.category.display_name }}
-                                </a>
-                            </p>
-                            {% endif %}
-                            {% if request.user.is_superuser %}
-                                <small class="ml-3">
-                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                    <a class="text-danger" data-bs-toggle="modal" data-bs-target="#removeModal">Delete</a>
-                                </small>
-                            {% endif %}
+            <div class="col-sm-6 col-md-4 col-lg-2">
+                <div class="card product-card rounded bg-dark">
+                    {% if product.image %}
+                    <a href="{% url 'product_detail' product.id %}">
+                        <img class="card-img-top img-fluid bg-dark" src="{{ product.image.url }}" alt="image for {{ product.name }}">
+                    </a>
+                    {% else %}
+                    <a href="{% url 'product_detail' product.id %}">
+                        <img class="card-img-top img-fluid bg-dark" src="{{ MEDIA_URL }}no_image.jpeg" alt="no image found for {{ product.name }}">
+                    </a>
+                    {% endif %}
+                    <div class="card-body pb-0 text-light bg-dark">
+                        <p class="mb-0">{{ product.name }}</p>
+                    </div>
+                    <div class="card-footer pt-0 border-0 text-start bg-dark">
+                        <div class="row">
+                            <div class="col">
+                                <p class="lead mb-0 text-left font-weight-bold text-light">£{{ product.price }}</p>
+                                {% if product.category %}
+                                <p class="small mt-1 mb-0">
+                                    <a class="text-light" href="{% url 'products' %}?category={{ product.category.name }}">
+                                        {{ product.category.display_name }}
+                                    </a>
+                                </p>
+                                {% endif %}
+                                {% if request.user.is_superuser %}
+                                    <small class="ml-3">
+                                        <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                        <a class="text-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a>
+                                    </small>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        {% if request.user.is_superuser %}
-            {% include "stock/includes/delete_modal.html" %}
-        {% endif %}
+            {% if request.user.is_superuser %}
+                {% include "stock/includes/delete_modal.html" %}
+            {% endif %}
         {% endfor %}
     </div>
 </div>

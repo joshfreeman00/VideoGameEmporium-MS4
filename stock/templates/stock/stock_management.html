@@ -14,8 +14,10 @@
     </div>
     <div class="row">
         <div class="left pb-2">
-            <a href="{% url 'add_product' %}" class="btn btn-success ">Add Stock <i
-                    class="fas fa-circle-plus right"></i></a>
+            <a href="{% url 'add_product' %}" class="btn btn-success">
+              Add Stock
+              <i class="fas fa-circle-plus right"></i>
+            </a>
         </div>            
     </div>
     <div class="row">
@@ -39,12 +41,12 @@
                     <a class="text-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a>
                 </td>
               </tr>
+              {% if request.user.is_superuser %}
+                {% include "stock/includes/delete_modal.html" %}
+              {% endif %}
             {% endfor %}
             </tbody>
           </table>
-          {% if request.user.is_superuser %}
-            {% include "stock/includes/delete_modal.html" %}
-          {% endif %}
     </div>
 </div>
 
