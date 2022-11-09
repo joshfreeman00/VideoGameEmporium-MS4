@@ -112,7 +112,21 @@ As a admin;
 
 The wireframes for the webpage can be viewed here.
 
-* ![]()
+* ![home](docs/wireframes/home.png)
+
+* ![home_mobile](docs/wireframes/home_mobile.png)
+
+* ![shop](docs/wireframes/shop.png)
+
+* ![shop_mobile](docs/wireframes/shop_mobile.png)
+
+* ![cart](docs/wireframes/cart.png)
+
+* ![checkout](docs/wireframes/checkout.png)
+
+* ![login](docs/wireframes/login.png)
+
+* ![register](docs/wireframes/register.png)
 
 ## ERD diagram
 
