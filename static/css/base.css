@@ -225,3 +225,9 @@ footer {
         margin: 0 5px;
     }
 }
+
+@media (max-width: 991px) {
+    .product-size {
+        font-size: 70%;
+    }
+}
