@@ -42,55 +42,136 @@ As a admin;
 
 ### Logo and Navigation bar
 
-* 
+* The name/logo of the website, Video Game Emporium, is located on the left of the navbar, along with the ability to return to the home page just by clicking on the logo.
+* The navigation links are located on the right of the navbar, which links to the other available pages. Here users can easily use these links to navigate from each webpage.
+* There also is a search bar located in the centerof the nav, this allows the user to search for products using a search term.
+* For smaller devices, the navigation bar changes slightly with the navigation links droping underneath while still keeping its size, allowing the user to still access them with only one action. 
 
-![nav_bar]()
+![nav_bar](docs/testing/nav_header.png)
+
+![nav_mobile](docs/testing/nav_mobile.png)
 
 ### Header
 
-* 
+* The header displays a delivery cost banner, notifying the users and potential customers about a free delivery thershold.
 
-![header]()
+![header](docs/testing/nav_header.png)
 
 ### Footer
 
-* The footer contains external links to both Github and The Code Institute.
+* The footer contains external links to both the Github repository and The Code Institute.
+* The footer also cotainers links to external social media sites.
 
-![footer]()
+![footer](docs/testing/footer.png)
+
+### Home page
+
+* The home page is the landing page for the website, it is the first page the user views when entering the website. It contains text along with a button that directs the user to the products page.
+
+![home_page](docs/testing/home_page.png)
+
+### Products page
+
+* The products nav link in the header, once clicked, gives the user to choice which category they would like to view, along with the ability to view all products.
+
+  - ![product_dropdown](docs/testing/product_dropdown.png)
+
+* The products page contains the products available on the site. It also displays the amount of products on that page, along with a dropdown for if the user would like to sort the products, for example alphabetically descending.
+
+  - ![products](docs/testing/products.png)
+
+### Products detail page
+
+* The products detail page displays information about the product that the user selected. It contains the price, the products image and the description of the product. It also contains the products size, if appilcable.
+
+* The page also contains a input field that allows the user to increase or decrease the quantity of the product the user would like to add to their cart. It also contains two buttons, a 'Keep shopping' button that returns the user back to the product page and a 'Add to Cart' button, that allows the user to add the selected product and the quantity of the product they have choosen.
+
+![product_details](docs/testing/product_detail.png)
+
+### Shopping Cart
+
+* The shopping cart initially shows text that notifies the user that their cart is currently empty, with a button that redirects them to the products page to browse.
+
+  - ![empty_cart](docs/testing/emtpy_cart.png)
+
+* Once there is atleast one product within the cart, the cart page will update and display the products currently in the cart. The cart contains the products relevant information along with the quantity and the sub total of the product.
+* At the bottom of the page is the grand total, along with the carts total and the delivery charge.
+
+  - ![cart](docs/testing/cart.png)
+
+* If the users current cart total is below the free delivery threshold, the user will be notfiied that they could get free delivery if spend they spend X amount.
+
+  - ![threshold_noti](docs/testing/threshold_noti.png)
+
+### Checkout page
+
+* The checkout page contains a form that the user can fill in with their delivery information, with the option of saving their information for next time, located underneath said form.
+* To the right of the form is the order summary containing the users selected products, their relevant information, sub total of each product, order total, delivery cost and grand total. Above the order summary is a button that if interacted with, redirects the user back to the cart where they can edit their current cart.
+* At the bottom of the page contains a input where they can enter their payment card information along with a checkout buttons. Interacting with the button, provided the delivery information is valid and the payment card is accepted, the order will be processed and if successful a order confirmation will be displayed along with an email sent to the users email address. If the form is invalid or the payment card isn't accepted, this will notify the user of any errors to rectify before submitting the information again.
+
+![checkout](docs/testing/checkout.png)
+
+### Order confirmation
+
+* The order confirmation page triggers when a order has been successfully sumbitted by a user. It contains the relevant information of the items they purchased, along with their delivery information and their billing information which contains the delivery cost, sub total and grand total.
+
+![order_confirm](docs/testing/order_confirm.png)
 
 ### Profile page
 
-* 
+* The profile page shows any relevant information that is linked to the current logged in user.
 
-![profile_page]()
+  - The users delivery information is displayed on the left, with a button that allows users to udpdate their delivery information.
+
+  - If applicable, the right handside displays the order history. This is a list of orders that have been placed by the user with a berief overview of what they ordered. A link is present that allows to the user to be taken to the past confirmation of that respective order.
+
+![profile](docs/testing/profile.png)
 
 ### Log in page
 
-* 
+* The login page contains two input fields, one for their username or email and one for their password. Filling these fields with their details and clicking sign in takes the user to the home page and notifies the user that they have successfully signed in. The user can also tick the remember me box for the website to remeber their log in details for next time they log in.
 
-![login_page]()
+* The page also contains text notifiying the user that if they are not a user, they can use the provided 'sign up' link to take the user to the sign up page, that then allows the user to create an account.
 
-### Register page
+* lastly the page also contains text that notifies the user that if they have forgotten their password, they can interact with the provided link to reset their password.
 
-* 
+![login_page](docs/testing/login.png)
 
-![register_page]()
+### Sign up page
+
+* The sign up page cotains input fields that allows the user to fill in their email, username and password, once interacting with the 'sign up' button. The user will be notified that an email confirmation of the accounts creation has been sent to the users email address.
+
+* The page also contains text notifiying the user that if they are a existing user, they can use the provided 'sign in' link to take the user to the log in page, that then allows the user log in to their account.
+
+![signup_page](docs/testing/signup.png)
 
 ### Deletion modals
 
-* The deletion/removal modals are used as a form of defensive programming, clicking any delete/remove button will cause the modal to appear, asking if the user would like to continue.
+* The deletion/removal modals are used as a form of defensive programming, clicking any delete/remove button will cause the modal to appear, asking if the user would like to continue. The delete modal only shows to super users as only they can see the delete button on products.
 
-![remove_modal]()
+![remove_modal](docs/testing/remove_modal.png)
 
-![delete_modal]()
+![delete_modal](docs/testing/delete_modal.png)
 
-### Admin only features
+### Super-user only features
 
 * Managing stock:
 
-  - 
+  - Super-users have the ability to manage stock, by either deleting the item from the database or editing the products information. This can either be accessed on the products page or the stock management page. Superusers can also interact with the 'Add stock' button within this page, this redirects the superuser to the Add product page. These options along with the stock management page is only accessible to super users, if the current user is not, these will not be visable.
 
-  ![]()
+  ![stock_management](docs/testing/stock_management.png)
+
+* Edit products page:
+
+  - The edit products page contains the details of the product that the superuser is editing, here the superuser can edit the details and interacting with the 'Edit product' button updates the altered details of that product and saves it to the database. Interacting with the 'Cancel button' will redirect the superuser back to the stock management page and reverts any changes in the edit product page.
+
+  ![edit_product](docs/testing/edit_product.png)
+
+* Add products page:
+
+  - The add products page contains a form that superusers can fill in in order to create a new product, at the bottom contains a Image section, which allows the superuser to upload an image of the product. Once the 'Add product' button at the bottom of the form has been interacted with, this posts the form and sends the products information to the database, thus creating the product, that now can be viewed within the stock management page or products page.
+
+  ![add_product](docs/testing/add_product.png)
 
 ## Design
 
