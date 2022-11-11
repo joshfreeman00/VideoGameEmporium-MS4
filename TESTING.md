@@ -8,7 +8,9 @@ To return to the readme click [here.](README.md)
 
 ### HTML validation
 
-* Validation for the HTML can be found [here.]()
+* Validation for the HTML can be found [here.](https://validator.w3.org/nu/?doc=https%3A%2F%2Fvideo-game-emporium-ms4.herokuapp.com%2F)
+
+![html_validation](docs/testing/html_validation.png)
 
 ### CSS validation
 
@@ -22,15 +24,50 @@ To return to the readme click [here.](README.md)
 
 * Validation for the JS can be found [here.](https://jshint.com/)
 
-![js_validation]()
+![js_checkout](docs/testing/checkout_valid.png)
+
+![js_profiles](docs/testing/profiles_valid.png)
 
 ### Python Validation
 
+* Cart app
+    - context.py
+    - urls.py
+    - views.py
 
+* Checkout app
+    - admin.py
+    - apps.py
+    - forms.py
+    - models.py
+    - signals.py
+    - urls.py
+    - views.py
+
+* Home app
+    - urls.py
+    - views.py
+
+* Profiles app
+    - forms.py
+    - models.py
+    - urls.py
+    - views.py
+
+* Stock app
+    - apps.py
+    - forms.py
+    - models.py
+    - urls.py
+    - views.py
 
 ## Defensive programming tests
 
+* For defensive programming, if the user is not logged in when trying to view their profile, it will ask them to log in. Even if the user bypasses this by using the url, it will still ask them to log in.
 
+* For superuser only features (i.e access to stock managment page), if the user is not a superuser, an error toast will show indicating that they are not authorised, and redirects the user back to the home page.
+
+![error_toast](docs/testing/error_toast.png)
 
 ### Error handling
 
