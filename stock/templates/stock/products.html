@@ -33,7 +33,7 @@
     </div>
     <div class="row">
         {% for product in products %}
-            <div class="col-md-2 col-4 product-size">
+            <div class="col-12 col-sm-6 col-md-3 col-lg-2 my-3 product-size">
                 <div class="card product-card rounded bg-dark">
                     {% if product.image %}
                     <a href="{% url 'product_detail' product.id %}">
