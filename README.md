@@ -209,6 +209,7 @@ A deployed link is available [here.](https://video-game-emporium-ms4.herokuapp.c
 - [Trousers](https://www.vanillaunderground.com/products/call-of-duty-skull-all-over-print-mens-loungepant?variant=27925536342039&currency=GBP&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&gclid=CjwKCAiAvK2bBhB8EiwAZUbP1OfprI2Vh-X7a7o7PzsA6G4rpep0UoM2GkW97LQFb7_iaNOPC3wIgRoC0WEQAvD_BwE)
 - [Mug](https://www.grindstore.com/products/adventure-time-jake-mug_34125.html?gclid=CjwKCAiAvK2bBhB8EiwAZUbP1GEo5vDXHhDnElwBsRhU8BbI99Eut9gq0z28BK8wgTfM2vSqvvLyThoCc3AQAvD_BwE)
 - [Minecraft](https://en.wikipedia.org/wiki/Minecraft)
+- [No Image](https://commons.wikimedia.org/wiki/File:No_Image_Available.jpg)
 
 * The image for the background is used to work well with the websites theme along with the retro look of the games from the past.
 
