@@ -32,6 +32,16 @@ To return to the readme click [here.](README.md)
 
 
 
+### Error handling
+
+* Error: 404
+
+![404_error](docs/testing/404_error.png)
+
+* Error: 500
+
+![500_error](docs/testing/500_error.png)
+
 ## Responsiveness
 
 * The following images will showcase how the project is shown on different devices and shows the responsiveness of the project.
