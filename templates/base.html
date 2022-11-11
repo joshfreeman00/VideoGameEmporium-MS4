@@ -19,7 +19,7 @@
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Silkscreen&display=swap" rel="stylesheet">
@@ -80,14 +80,14 @@
           </li>
           <!-- products -->
           <li class="list-inline-item dropdown nav-active-style">
-            <a class="text-light nav-link" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true"
+            <a class="text-light nav-link" href="#" id="product-options" data-bs-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
               <div class="text-center">
                 <div><i class="fa-solid fa-bag-shopping"></i></div>
                 <p class="my-0">Products</p>
               </div>
             </a>
-            <div class="dropdown-menu border" aria-labelledby="user-options">
+            <div class="dropdown-menu border" aria-labelledby="product-options">
               <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
               <a href="{% url 'products' %}?category=video_games" class="dropdown-item">Video Games</a>
               <a href="{% url 'products' %}?category=game_consoles" class="dropdown-item">Game Consoles</a>
@@ -193,17 +193,17 @@
 </footer>
 
   {% block postloadjs %}
-  <script type="text/javascript">
+  <script>
 
-    let toastElList = [].slice.call(document.querySelectorAll('.toast'))
+    let toastElList = [].slice.call(document.querySelectorAll('.toast'));
     let toastList = toastElList.map(function (toastEl) {
       let option = {
         animation: true,
         delay: 5000,
-      }
-      let bsToast = new bootstrap.Toast(toastEl, option)
+      };
+      let bsToast = new bootstrap.Toast(toastEl, option);
       bsToast.show();
-    })
+    });
   </script>
   {% endblock %}
 
