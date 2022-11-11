@@ -189,6 +189,10 @@ A deployed link is available [here.](https://video-game-emporium-ms4.herokuapp.c
 
   ![add_product](docs/testing/add_product.png)
 
+### Future features
+
+* The ability for users to contact the site/admin via email using a dedicated page.
+
 ## Design
 
 ### Images
