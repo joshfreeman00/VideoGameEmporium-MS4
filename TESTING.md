@@ -131,7 +131,75 @@ To return to the readme click [here.](README.md)
 
 ## User story testing
 
+### Viewing and navigation
 
+* ![view_nav](docs/userstories/view_nav.png)
+    * User Story ID 1:
+        - ![products](docs/testing/products.png)
+    * User Story ID 2:
+        - ![product_detail](docs/testing/product_detail.png)
+    * User Story ID 5:
+        * The carts price has a default value of £0.00 until a product is added to the cart. After the cart changes colour and the prices updates accordingly.
+            - ![cart_price](docs/testing/cart_price.png)
+
+### Registration and accounts
+
+* [accounts](docs/userstories/accounts.png)
+    * User Story ID 6 & 7:
+        * If the user interacts with the 'My Profile' nav link, options to register and log in can be found, each taking them to their respective page.
+            - ![login_page](docs/testing/login.png)
+            - ![signup_page](docs/testing/signup.png)
+    * User Story ID 8:
+        * If the user has forgotten their password, they can interact with 'Forgot password?' where they would be asked to fill in their email address, interacting with the reset button will send a email with a link to reset their password.
+            - ![login_page](docs/testing/login.png)
+            - ![password_reset](docs/testing/password_reset.png)
+    * User Story ID 10:
+        - ![profile](docs/testing/profile.png)
+
+### Product searching and sorting
+
+* ![product_search](docs/userstories/product_search.png)
+    * User Story ID 11:
+        * Interacting with the 'Sort By' dropdown allows the user to sort by either price or alphabetically in ascending or descending order
+            - ![sorting](docs/testing/sorting.png)
+    * User Story ID 12:
+        * The user can interact with the products nav link and select any category they would like, doing so opens the product page with all of the current products in the category they have chosen.
+            - ![categories](docs/testing/categories_example.png)
+    * User Story ID 13 & 14:
+        * The user can use the search bar at the top of the site and search for a specific term, the search query will return anything that has the users search query within the products name or description and the amount of products returned.
+            * An example of a user searching for 'po' returns 4 products is show below.
+            - ![search_query](docs/testing/search_query.png)
+
+### Purchases and checkout
+
+* ![purchases](docs/userstories/purchases.png)
+
+    * User Story ID 15:
+        * The user can select the quantity and size of the product on the products details page.
+            - ![products_detail](docs/testing/product_detail.png)
+    * User Story ID 16 & 17:
+        * The User can achieve all of this from the shopping cart.
+            - ![cart_example](docs/testing/cart_example.png)
+    * User Story ID 18, 19, 20 & 21:
+        * The User can achieve all of this from the checkout page.
+        * The website uses stripe for easy payments, located at the bottom of the checkout form.
+            - ![order_example](docs/testing/order_example.png)
+    * User Story ID 22:
+        - ![order_confirm](docs/testing/order_confirm.png)
+    * User Story ID 23:
+        - ![email_confirm](docs/testing/email_confirm.png)
+
+### Management
+
+* ![management](docs/userstories/management.png)
+
+### Site information
+
+* ![site_info](docs/userstories/site_info.png)
+
+### Contact information
+
+* ![contact_info](docs/userstories/contact_info.png)
 
 ## Environment testing
 
