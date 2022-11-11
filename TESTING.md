@@ -32,34 +32,55 @@ To return to the readme click [here.](README.md)
 
 * Cart app
     - context.py
+        ![cart_context](docs/python_validation/cart_context.png)
     - urls.py
+        ![cart_urls](docs/python_validation/cart_urls.png)
     - views.py
+        ![cart_views](docs/python_validation/cart_views.png)
 
 * Checkout app
     - admin.py
+        ![checkout_admin](docs/python_validation/checkout_admin.png)
     - apps.py
+        ![checkout_apps](docs/python_validation/checkout_apps.png)
     - forms.py
+        ![checkout_forms](docs/python_validation/checkout_forms.png)
     - models.py
+        ![checkout_models](docs/python_validation/checkout_models.png)
     - signals.py
+        ![checkout_signals](docs/python_validation/checkout_signals.png)
     - urls.py
+        ![checkout_urls](docs/python_validation/checkout_urls.png)
     - views.py
+        ![checkout_views](docs/python_validation/checkout_views.png)
 
 * Home app
     - urls.py
+        ![home_urls](docs/python_validation/home_urls.png)
     - views.py
+        ![home_views](docs/python_validation/home_views.png)
 
 * Profiles app
     - forms.py
+        ![profiles_forms](docs/python_validation/profiles_forms.png)
     - models.py
+        ![profiles_models](docs/python_validation/profiles_models.png)
     - urls.py
+        ![profiles_urls](docs/python_validation/profiles_urls.png)
     - views.py
+        ![profiles_views](docs/python_validation/profiles_views.png)
 
 * Stock app
-    - apps.py
+    - admin.py
+        ![stock_admin](docs/python_validation/stock_admin.png)
     - forms.py
+        ![stock_forms](docs/python_validation/stock_forms.png)
     - models.py
+        ![stock_models](docs/python_validation/stock_models.png)
     - urls.py
+        ![stock_urls](docs/python_validation/stock_urls.png)
     - views.py
+        ![stock_views](docs/python_validation/stock_views.png)
 
 ## Defensive programming tests
 
