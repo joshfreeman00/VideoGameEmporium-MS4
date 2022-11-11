@@ -249,6 +249,7 @@ The ERD diagram for the project can be viewed here.
 * [Gitpod](https://www.gitpod.io/) - Used as a cloud-based IDE.
 * [Github](https://github.com/) - Used to secure code online.
 * [Git](https://git-scm.com/) - Version control.
+* [Django](https://www.djangoproject.com/) - Used as a ORM.
 * [Bootstrap](https://getbootstrap.com/) - Used for responsive front-end CSS framework.
 * [Balsamiq](https://balsamiq.com/) - Used to create wireframes.
 * [Font Awesome](https://fontawesome.com/icons) - For the various icons used.
