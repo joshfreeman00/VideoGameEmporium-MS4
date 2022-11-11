@@ -73,6 +73,10 @@ def product_detail(request, product_id):
 @login_required
 def stock_management(request):
     ''' A view to show all stock '''
+
+    if not request.user.is_superuser:
+        messages.error(request, 'You are not authorised to do this.')
+        return redirect(reverse('home'))
     products = Product.objects.all()
 
     context = {
