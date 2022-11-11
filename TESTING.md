@@ -70,3 +70,31 @@ To return to the readme click [here.](README.md)
 
     ![safari](docs/testing/vge_safari.png)
 
+
+## User story testing
+
+
+
+## Environment testing
+
+* The following images are within two seperate environments, they have different URLs to validate this.
+
+### Local environment
+
+* The images below show the game within the local (development) environment of gitpod.
+
+![local_env](docs/testing/local_env.png)
+
+### Production environment
+
+* The images below show the game within the production (deployed) environment of Heroku.
+
+![delpoyed_env](docs/testing/deployment_env.png)
+
+## Bugs
+
+
+
+### Unfixed bugs
+
+* There are no unfixed bugs that I am currently aware of.
