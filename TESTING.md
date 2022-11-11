@@ -32,3 +32,31 @@ To return to the readme click [here.](README.md)
 
 
 
+## Responsiveness
+
+* The following images will showcase how the project is shown on different devices and shows the responsiveness of the project.
+
+    - Mobile devices:
+
+    ![mobile](docs/testing/mobile_view.png)
+
+    - Tablet devices:
+
+    ![tablet](docs/testing/tablet_view.png)
+
+    - Desktop devices:
+
+    ![desktop](docs/testing/home_page.png)
+
+## Browser Compatibility
+
+* The following images shows the project being tested in both Chrome and Safari browsers.
+
+    - Chrome
+
+    ![chrome](docs/testing/vge_chrome.png)
+
+    - Safari
+
+    ![safari](docs/testing/vge_safari.png)
+
