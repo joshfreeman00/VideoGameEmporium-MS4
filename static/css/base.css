@@ -1,12 +1,16 @@
-html {
+html, body {
     height: 100%;
 }
 
 body {
     background: url('/media/video_game_background.png') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
     font-family: 'Open Sans', sans-serif;
+}
+
+body > footer {
+    position: sticky;
+    top: 100vh;
 }
 
 /* from Bulma */
