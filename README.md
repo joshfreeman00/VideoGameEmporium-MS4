@@ -26,17 +26,33 @@ A deployed link is available [here.](https://video-game-emporium-ms4.herokuapp.c
 
 * The aim of the website is to allow users to browse the range of products the website has to offer, add products to a shopping cart and purchase them. the sttock is managed by superusers.
 
-### User:
+### Viewing and navigation
 
-As a user;
+![view_nav](docs/userstories/view_nav.png)
 
+### Registration and accounts
 
+![accounts](docs/userstories/accounts.png)
 
-### Admin:
+### Product searching and sorting
 
-As a admin;
+![product_search](docs/userstories/product_search.png)
 
+### Purchases and checkout
 
+![purchases](docs/userstories/purchases.png)
+
+### Management
+
+![management](docs/userstories/management.png)
+
+### Site information
+
+![site_info](docs/userstories/site_info.png)
+
+### Contact information
+
+![contact_info](docs/userstories/contact_info.png)
 
 ## Structure/Features
 
@@ -177,6 +193,12 @@ As a admin;
 
 ### Images
 
+* The images used for the products are from various wesbite but are used only for educational purposes, all rights are with the respective websites from where the images are sourced.
+
+* The image for the background is used to work well with the websites theme along with the retro look of the games from the past.
+
+  - The image was sourced [here.](https://wallpapersafari.com/w/SkhFu9)
+
 ### Colour scheme
 
 * The colors of purple and black used throughout help contrast the white text.
@@ -259,8 +281,7 @@ The live deployed application can be found at [video-game-emporium-ms4](https://
 * [Stack Overflow](https://stackoverflow.com/) - For help debugging and fixes throughout.
 * My mentor - For helpful tips and debugging.
 * Boutique Ado Walkthrough project - For guidance on code that was used from Code Institute.
-* [Wikipedia](*) - For the images used for the games.
-* [Scott Kipp](https://github.com/Code-Institute-Solutions/boutique_ado_v1/commit/de7ad2067ac1b5de37a4cd8b9f4ddf572a4bf6c7#diff-7653e5eaf8a2f40ba60d0de39ab6c27cfb9c64c80807631498ebb9295c51744a
+* [Scott](https://github.com/Code-Institute-Solutions/boutique_ado_v1/commit/de7ad2067ac1b5de37a4cd8b9f4ddf572a4bf6c7#diff-7653e5eaf8a2f40ba60d0de39ab6c27cfb9c64c80807631498ebb9295c51744a
 ) - For the minus quantity bug within the cart.
 
 
