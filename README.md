@@ -199,6 +199,17 @@ A deployed link is available [here.](https://video-game-emporium-ms4.herokuapp.c
 
 * The images used for the products are from various wesbite but are used only for educational purposes, all rights are with the respective websites from where the images are sourced.
 
+- [Terraria t-shirt](https://www.amazon.co.uk/Terraria-Boss-Rush-Hardmode-T-Shirt/dp/B07ZHVLPP6)
+- [Pokemon ETB](https://magicmadhouse.co.uk/pokemon-pokemon-go-elite-trainer-box)
+- [Pokemon booster pack](https://magicmadhouse.co.uk/pokemon-swsh-vivid-voltage-booster-pack)
+- [Xbox series X](https://www.smythstoys.com/uk/en-gb/video-games-and-tablets/xbox-gaming/xbox-series-x-%7C-s/xbox-series-x-%7C-s-consoles/xbox-series-x-1tb-console/p/192012)
+- [Playstation 5](https://www.eurogamer.net/ps5-stock-where-to-buy-playstation-5)
+- [Stray](https://www.amazon.co.uk/iam8bit-Stray-PS5/dp/B0B63M9DLC)
+- [Headset](https://www.argos.co.uk/product/8647070?istCompanyId=a74d8886-5df9-4baa-b776-166b3bf9111c&istFeedId=c290d9a9-b5d6-423c-841d-2a559621874c&istItemId=ixwlpwwmm&istBid=t&&cmpid=GS001&_$ja=tsid:59157%7cacid:534-693-8244%7ccid:16586469281%7cagid:137424042631%7ctid:pla-882619520147%7ccrid:587991330707%7cnw:u%7crnd:7066898008859032778%7cdvc:c%7cadp:%7cmt:%7cloc:9045329&utm_source=Google&utm_medium=cpc&utm_campaign=16586469281&utm_term=8647070&utm_content=shopping&utm_custom1=137424042631&utm_custom2=534-693-8244&GPDP=true&gclid=CjwKCAiAvK2bBhB8EiwAZUbP1Gsi7EqXJIqIoQrOKN9qQXcJd5XVaqfZiwHkVNvbcmWx9fQcpYN6vRoCODAQAvD_BwE&gclsrc=aw.ds)
+- [Trousers](https://www.vanillaunderground.com/products/call-of-duty-skull-all-over-print-mens-loungepant?variant=27925536342039&currency=GBP&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&gclid=CjwKCAiAvK2bBhB8EiwAZUbP1OfprI2Vh-X7a7o7PzsA6G4rpep0UoM2GkW97LQFb7_iaNOPC3wIgRoC0WEQAvD_BwE)
+- [Mug](https://www.grindstore.com/products/adventure-time-jake-mug_34125.html?gclid=CjwKCAiAvK2bBhB8EiwAZUbP1GEo5vDXHhDnElwBsRhU8BbI99Eut9gq0z28BK8wgTfM2vSqvvLyThoCc3AQAvD_BwE)
+- [Minecraft](https://en.wikipedia.org/wiki/Minecraft)
+
 * The image for the background is used to work well with the websites theme along with the retro look of the games from the past.
 
   - The image was sourced [here.](https://wallpapersafari.com/w/SkhFu9)
