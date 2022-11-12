@@ -2,10 +2,18 @@
 {% load static %}
 
 {% block content %}
+<div class="container-fluid p-0">
+    <div class="row nav-colour box-shadowing mx-0">
+        <div class="col text-center mt-3">
+            <h2 class="text-light">Welcome to our emporium!</h2>
+            <h4 class="text-light">Shop here for all the latest Video Games, Consoles and all your gaming needs!</h4>
+        </div>
+    </div>
+</div>
 <div class="container h-100">
     <div class="row h-100">
         <div class="col-7 col-md-6 my-auto  bg-dark bg-gradient bg-opacity-50 py-3 rounded">
-            <h1 class="display logo-font">The newest game products are now here!</h1>
+            <h1 class="display logo-font">Browse our store here!</h1>
             <div class="mt-5">
                 <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-pill py-3 px-5">Take a look</a>
             </div>
