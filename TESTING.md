@@ -107,14 +107,17 @@ To return to the readme click [here.](README.md)
     - Mobile devices:
 
     ![mobile](docs/testing/mobile_view.png)
+    ![mobile_products](docs/testing/mobile_products.png)
 
     - Tablet devices:
 
     ![tablet](docs/testing/tablet_view.png)
+    ![tablet_poducts](docs/testing/tablet_products.png)
 
     - Desktop devices:
 
     ![desktop](docs/testing/home_page.png)
+    ![product_page](docs/testing/products.png)
 
 ## Browser Compatibility
 
@@ -192,14 +195,35 @@ To return to the readme click [here.](README.md)
 ### Management
 
 * ![management](docs/userstories/management.png)
+    * User Story ID 24:
+        * The admin can add products by navigating themselves to the 'Stock Management' page.
+            - [stock_management](docs/testing/stock_management.png)
+        * Here, the admin or superuser can interact with the 'Add product' button, which takes them to the add product page.
+            - ![add_product](docs/testing/add_product.png)
+    * User Story ID 25:
+        * The admin can edit products by either navigating themselves to the 'Stock Management' page or from the 'products' page.
+            - [stock_management](docs/testing/stock_management.png)
+            - ![product_page](docs/testing/products.png)
+        * Here, the admin or superuser can interact with the blue Edit text, which takes them to the edit product page for the specific product.
+            - ![edit_product](docs/testing/edit_product.png)
+    * User Story ID 26:
+        * The admin can edit products by either navigating themselves to the 'Stock Management' page or from the 'products' page.
+            - [stock_management](docs/testing/stock_management.png)
+            - ![product_page](docs/testing/products.png)
+        * Here, the admin or superuser can interact with the red Delete text, which causes a defensive modal to pop up, asking if they would like to continue, interacting with the 'delete' button will delete the product.
+            - ![delete_modal](docs/testing/delete_modal.png)
 
 ### Site information
 
 * ![site_info](docs/userstories/site_info.png)
+    * User Story ID 27:
+        - ![welcome_text](docs/testing/welcome_text.png)
 
 ### Contact information
 
 * ![contact_info](docs/userstories/contact_info.png)
+    * User Story ID 28:
+        - ![footer](docs/testing/footer.png)
 
 ## Environment testing
 
