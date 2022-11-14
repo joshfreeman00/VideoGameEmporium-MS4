@@ -18,7 +18,7 @@ A deployed link is available [here.](https://video-game-emporium-ms4.herokuapp.c
 
 ## Showcase of the site
 
-![showcase]()
+![showcase](docs/testing/am_i_responsive.png)
 
 ## UX
 
