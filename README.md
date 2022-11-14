@@ -287,9 +287,212 @@ To view all testing documentation click [here](TESTING.md)
 
 The live deployed application can be found at [video-game-emporium-ms4](https://video-game-emporium-ms4.herokuapp.com/).
 
+### Live Deployment
+
+#### Deployment to Heroku
+
+The project was deployed using [Heroku](https://dashboard.heroku.com/) and [AWS](https://aws.amazon.com/), this was done using the following steps:
+
+1. When the project is ready to deploy, use the ``` pip3 install ``` command to install; gunicorn, psycopg2 and dj-database-url.
+2. Freeze the requirements of the project by using ``` pip3 freeze > requirements.txt ```. This adds all the requirements/packages into a text folder named 'requirements'.
+3. Create a Procfile and add the following code: web: ``` gunicorn vg_emporium.wsgi:application ```. A [Procfile](https://www.codementor.io/@populardemand/the-heroku-procfile-1sxnqu1rqo) is a file that specifies the commands that are executed by an Heroku app on startup.
+4. Commit these additions and push them using the followig commands:
+  1. ``` git add . ```
+  2. ``` git commit -m '<your relevant message here>' ```
+  3. ``` git push ```
+5. Go to [Heroku](https://dashboard.heroku.com/) and either log in or create a account.
+6. Once at the dashboard, click the 'New' button, located at the top right of the page and select 'Create new app' and folow the steps on Heroku.
+7. Once the app has been created, click the 'Resources' tab and using the add-ons search bar, add 'Heroku Postgres', choose the 'Hobby Dev' plan and submit the order form, this adds it to the project.
+8. Now navigate to the 'Settings' tab, within the settings, navigate to the config vars section and click on 'Reveal Config Vars' and add the required variables for the project which should be the following:
+  AWS_ACCESS_KEY_ID --- 'Insert the AWS access key ID' (Will be sourced when you set up AWS)
+  AWS_SECRET_ACCESS_KEY --- 'Insert the AWS secret access key' (Will be sourced when you set up AWS)
+  DATABASE_URL --- 'The Heroku postgres db url'
+  EMAIL_HOST_PASS --- 'The emails password'
+  EMAIL_HOST_USER --- 'The email used for sending email confirmations'
+  SECRET_KEY --- 'Insert your own secret key here'
+  STRIPE_PUBLIC_KEY --- 'Insert your own stripe public key here'
+  STRIPE_SECRET_KEY --- 'Insert your own stripe secret key here'
+  USE_AWS --- True
+9. Now the Config Variables have been set up, navigate to the 'Deploy' tab and select the 'GitHub' Deployment method.
+10. Choose the repo that is being deployed and choose the 'Automatic Deploys' option.
+11. Back in the local environment, within the 'settings.py' file, import ``` dj_database_url ``` at the top.
+12. Comment out the SQLite database settings:
+  ```python
+  DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+  }
+  ```
+  And replace it with the following Postgres code:
+  ```python
+    DATABASES = {
+        'default': dj_database_url.parse('DATABASE_URL')
+    }
+  ```
+  The 'DATABASE_URL' value is from Herokus Config Vars.
+13. Now that the projects database is being directed to the new Heroku database, migrate the models using the following commands:
+  1. You need to check first what models are going to migrate to the database:
+  ``` python3 manage.py makemigrations --dry-run ```
+  2. Proceed to make said migrations:
+    ``` python3 manage.py makemigrations ```
+  3. Check the plan for the migration of the models (double check evrything looks good to migrate):
+    ``` python3 manage.py migrate --plan ```
+  4. Complete the migration:
+    ``` python3 manage.py migrate ```
+
+14. Comment the Postgres database code you added and uncomment the SQLite database code.
+15. Use the following command to back up the current database and load it into a db.json file:
+  ``` python3 manage.py dumpdata 'app_name' > db.json ``` (app_name being the name of the database you are backing up)
+  This will create a file called db.json.
+16. Comment the SQLite db code and uncomment the Postgres db code.
+17. Use the following command to upload the database to the Postgres db:
+  ``` python3 manage.py loaddata db.json ``` (Once the data has loaded, you can simply delete the json file)
+16. Create a superuser for the new database and follow the steps in the terminal:
+  ``` python3 manage.py createsuperuser ```
+17. Remove the Postgres db code and add the DATABASE_URL and its value to the env.py, it should look like this:
+  ```python
+  os.environ.setdefault('DATABASE_URL', '<url here>')
+  ```
+  This ensures the url does not get saved to version control.
+18. Commit/Push the changes.
+19. Create a if-else statment within the settings.py file to use the Postegres database if 'DATABASE_URL' is available and if it is not, use the SQLite database
+  ``` python
+    if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
+        }
+  ```
+  The Postgres database is now ready to use.
+20. Within the GitPod terminal, log into Heroku:
+  ``` heroku login -i ```
+21. Now disable 'COLLECTSTATIC' with the following command:
+  ``` heroku config:set DISABLE_COLLECTSTATIC=1 --app <app name> ```
+22. Add ``` ALLOWED_HOSTS = ['<app-name.herokuapp.com>', 'localhost'] ``` to settings.py.
+23. Commit and push the changes to GitHub.
+24. And then deploy to Heroku using the following commands :
+  ``` heroku git:remote -a <app name> ```
+  ``` git push heroku master ```
+
+#### AWS
+
+All Static and media files for the deployed project are hosted in a Amazon Web Services(AWS) S3 bucket. To create your own bucket, please follow this user guide on how to create one, found [here.](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html)
+
+To connect AWS to your deployed project follow these steps:
+
+1. In the gitpod terminal, install boto3 and django-storages using the following command:
+  ``` pip3 install ```
+2. Freeze the new requirements into the 'requirements.txt' file.
+3. Add 'storages' to INSTALLED_APPS in settings.py.
+4. Add the following code to settings.py to connect the AWS bucket you created to the project:
+  ```python
+  if 'USE_AWS' in os.environ:
+    # Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+    # Bucket config
+    AWS_STORAGE_BUCKET_NAME = 'bucket name'
+    AWS_S3_REGION_NAME = 'eu-west-2'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+  ```
+  The AWS access key and secret key will be within the env.py, to keep them hidden from version control.
+5. In the Config Vars on Heroku add the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY keys and its values.
+6. Also in the Config Vars, add the USE_AWS key and set the value of it to 'True'.
+7. finally in the Config Vars, remove the DISABLE_COLLECTSTATIC key and its value, since on the next deployment to Heroku, Django will collect the static files automatically and upload them to the AWS S3 bucket.
+8. Now to tell Django that AWS S3 needs to collect the static files and any uploaded images, to do so, follow these steps:
+  1. Create a custom_storages.py file and import the following:
+    ```python
+      from django.conf import settings
+      from storages.backends.s3boto3 import S3Boto3Storage
+    ```
+  2. within the custom_storages file add the following code:
+    ```python
+      class StaticStorage(S3Boto3Storage):
+      location = settings.STATICFILES_LOCATION
+
+
+      class MediaStorage(S3Boto3Storage):
+      location = settings.MEDIAFILES_LOCATION
+    ```
+  3. To use this file add the following code to the code added in step 4 (line 396):
+    ```python
+      # Static and media files
+      STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+      STATICFILES_LOCATION = 'static'
+      DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+      MEDIAFILES_LOCATION = 'media'
+    ```
+    Along with the following code to override the static and media URLs in production:
+    ```python
+      STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+      MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    ```
+9. Commit and push all the changes, now, whenever the project is deployed to heroku, when ever collectstatic is run when pushing any changes, any static files will be collected into either static file that are located in the AWS S3 bucket.
+10. Within the S3 bucket, create a folder called media.
+11. In the media folder, click the 'Upload' button and upload all the product files used in the project.
+12. Click 'Next' and under manage public permissions select grant public read access to these objects.
+12. Click 'Next' to the end then click 'Upload' to upload all the product images selected.
+
+If following the steps above, the project now should be fully deployed to Heroku and connected to AWS S3 so any static files/media is automatically collected to the bucket in their respective folders.
+
 ### Local Deployment
 
+*Gitpod* IDE was used to write the code for this project.
 
+To make a local copy of this repository, you can clone the project by typing the follow into your IDE terminal:
+- `git clone https://github.com/joshfreeman00/VideoGameEmporium-MS4.git`
+
+You can install this project's requirements (where applicable) using: `pip3 install -r requirements.txt`.
+
+Create an `env.py` file, and add the following environment variables:
+
+```python
+import os
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault('SECRET_KEY', 'insert your own random secret key here')
+os.environ.setdefault('STRIPE_PUBLIC_KEY', 'insert your own stripe public key here')
+os.environ.setdefault('STRIPE_SECRET_KEY', 'insert your own stripe secret key here')
+os.environ.setdefault('DEBUG', 'True')
+```
+
+Note:
+  - Your own stripe variables can be found on your [stripe](https://stripe.com/gb) dashboard.
+
+Next you will need to migrate the database models used to set up your own database:
+
+1. You need to check first what models are going to migrate to the database:
+  ``` python3 manage.py makemigrations --dry-run ```
+2. Proceed to make said migrations:
+  ``` python3 manage.py makemigrations ```
+3. Check the plan for the migration of the models (double check evrything looks good to migrate):
+  ``` python3 manage.py migrate --plan ```
+4. Complete the migration:
+  ``` python3 manage.py migrate ```
+
+Finally, you will need to create a super user to access the admin panel for the site:
+  ``` python3 manage.py createsuperuser ```
+  After typing that into the terminal, follow the steps within the terminal.
+
+If all the steps have been followed correctly, you can then run the project by using this command:
+  ``` python3 manage.py runserver ```
 
 ## Credits
 
